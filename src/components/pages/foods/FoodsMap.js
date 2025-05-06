@@ -44,8 +44,12 @@ function FoodsMap({ selected, data, refetch }) {
       style={{
         display: "flex",
         alignItems: "center",
-        ...(selected === "left" ? { flexWrap: "wrap" } : { flexDirection: "column" }),
-        ...(selected === "left" ? { marginTop: "130px" } : { marginTop: "50px" }),
+        ...(selected === "left"
+          ? { flexWrap: "wrap" }
+          : { flexDirection: "column" }),
+        ...(selected === "left"
+          ? { marginTop: "130px" }
+          : { marginTop: "50px" }),
         gap: "20px",
       }}
     >
@@ -72,7 +76,6 @@ function FoodsMap({ selected, data, refetch }) {
                   minWidth: "194px",
                   maxHeight: "194px",
                   minHeight: "194px",
-                  backgroundColor: "#C4C4C4",
                   boxShadow: "11px 13px 17px 0px #00000026",
                   borderRadius: "50%",
                   marginBottom: "42px",
@@ -83,7 +86,7 @@ function FoodsMap({ selected, data, refetch }) {
                 <Image
                   width={200}
                   height={200}
-                  src={food.image}
+                  src={food?.image}
                   alt="test"
                   style={{
                     objectFit: "contain",
@@ -138,7 +141,9 @@ function FoodsMap({ selected, data, refetch }) {
                       onClick={() => router.push(`/foods/${food.documentId}`)}
                     />
                     <CustomBtnFood
-                      onClick={() => router.push(`/foods/${food.documentId}/edit`)}
+                      onClick={() =>
+                        router.push(`/foods/${food.documentId}/edit`)
+                      }
                       back="#FF5B5B26"
                       img="/foodIcon2.png"
                       text="Edit"
@@ -156,7 +161,9 @@ function FoodsMap({ selected, data, refetch }) {
                     />
                     <CustomBtnFood
                       onClick={() =>
-                        router.push(`/foods/new?name=${food.name}&price=${food.price}`)
+                        router.push(
+                          `/foods/new?name=${food.name}&price=${food.price}`
+                        )
                       }
                       back="#5E6C9326"
                       img="/foodIcon4.png"
