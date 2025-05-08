@@ -14,7 +14,6 @@ import useFetchApiItems from "@/hooks/useFetchApiItems";
 import { useState } from "react";
 import { useRouter } from "next/router";
 import useFoodFormInit from "@/hooks/useFoodFormInit";
-import useFoodFormSubmit from "@/hooks/useFoodFromSubmit";
 
 function FoodForm({ title, food, btnText }) {
   const router = useRouter();
